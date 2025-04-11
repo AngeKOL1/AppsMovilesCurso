@@ -8,25 +8,50 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        android:id="@+id/rvListColors"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/colorView"
-        android:layout_width="84dp"
-        android:layout_height="35dp"
-        android:text=""
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="61dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="11dp">
 
-    <TextView
-        android:id="@+id/nameView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="55dp" />
+        <View
+            android:id="@+id/cColorBg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="76dp"
+            tools:layout_editor_absoluteY="11dp">
+
+            <TextView
+                android:id="@+id/nameColor"
+                android:layout_width="105dp"
+                android:layout_height="45dp"
+                android:text=""
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="21dp" />
+
+            <TextView
+                android:id="@+id/colorCod"
+                android:layout_width="105dp"
+                android:layout_height="45dp"
+                android:text=""
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="200dp"
+                tools:layout_editor_absoluteY="21dp" />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

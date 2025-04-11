@@ -1,6 +1,6 @@
 package com.example.colores.Adaptadores;
 
-import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.colores.Colores;
-import com.example.colores.MainActivity;
+import com.example.colores.Entities.Colores;
 import com.example.colores.R;
 
 import java.util.ArrayList;
@@ -36,15 +35,17 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.BasicViewHol
     public void onBindViewHolder(@NonNull ColorAdapter.BasicViewHolder holder, int position) {
         Colores color= colores.get(position);
 
-        TextView nView = holder.nombreView.findViewById(R.id.nameView);
-        nView.setText(color.name);
-        View cView= holder.colorView.findViewById(R.id.colorView);
+        TextView nView = holder.itemView.findViewById(R.id.nameColor);
+        TextView cView= holder.itemView.findViewById(R.id.colorCod);
+        View colorView= holder.itemView.findViewById(R.id.cColorBg);
 
+        nView.setText(color.nombre);
         try {
-            String hex = "#" + color.hex;
-            cView
-        }catch (){
-
+            String hex = "#" + color.colorHex;
+            cView.setText(hex);
+            colorView.setBackgroundColor(android.graphics.Color.parseColor(hex));
+        }catch (Exception ex){
+            Log.d("Main App","Usando color por defecto");
         }
     }
 
@@ -53,12 +54,10 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.BasicViewHol
         return colores.size();
     }
     public class BasicViewHolder extends RecyclerView.ViewHolder{
-        TextView colorView;
-        TextView nombreView;
+
         public BasicViewHolder(@NonNull View itemView){
             super(itemView);
-            colorView = itemView.findViewById(R.id.colorView);
-            nombreView=itemView.findViewById(R.id.nameView);
+
         }
     }
 }
