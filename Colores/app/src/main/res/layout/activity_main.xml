@@ -8,23 +8,25 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="409dp"
         android:layout_height="729dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="50dp" />
+        android:id="@+id/colorView"
+        android:layout_width="84dp"
+        android:layout_height="35dp"
+        android:text=""
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="61dp" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="82dp"
-        android:layout_height="51dp"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="34dp" />
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="55dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
