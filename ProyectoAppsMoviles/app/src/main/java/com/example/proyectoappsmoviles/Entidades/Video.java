@@ -1,12 +1,13 @@
 package com.example.proyectoappsmoviles.Entidades;
 
 import java.util.Date;
+import java.util.List;
 
 public class Video {
     private int idVideo;
     private String titulo;
-    private Date fechaSubida;
-    private byte[] contenidoVideo;
+    private String fechaSubida;
+
     private int duracionSegundos;
     private int numLikes;
     private int numComentarios =0;
@@ -14,11 +15,13 @@ public class Video {
     private String privacidad;
     private Usuario creador;
 
-    public Video(int idVideo, String titulo, Date fechaSubida, byte[] contenidoVideo, int duracionSegundos, int numLikes, int numComentarios, int numReproducciones, String privacidad, Usuario creador) {
+
+
+    public Video(int idVideo, String titulo, String fechaSubida, int duracionSegundos, int numLikes, int numComentarios, int numReproducciones, String privacidad, Usuario creador) {
         this.idVideo = idVideo;
         this.titulo = titulo;
         this.fechaSubida = fechaSubida;
-        this.contenidoVideo = contenidoVideo;
+
         this.duracionSegundos = duracionSegundos;
         this.numLikes = numLikes;
         this.numComentarios = numComentarios;
@@ -43,21 +46,15 @@ public class Video {
         this.titulo = titulo;
     }
 
-    public Date getFechaSubida() {
+    public String getFechaSubida() {
         return fechaSubida;
     }
 
-    public void setFechaSubida(Date fechaSubida) {
+    public void setFechaSubida(String fechaSubida) {
         this.fechaSubida = fechaSubida;
     }
 
-    public byte[] getContenidoVideo() {
-        return contenidoVideo;
-    }
 
-    public void setContenidoVideo(byte[] contenidoVideo) {
-        this.contenidoVideo = contenidoVideo;
-    }
 
     public int getDuracionSegundos() {
         return duracionSegundos;

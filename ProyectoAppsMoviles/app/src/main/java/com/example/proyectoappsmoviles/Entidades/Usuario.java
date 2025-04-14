@@ -9,21 +9,19 @@ public class Usuario {
     private String email;
     private String contraseña;
     private String bio;
-    private byte[] fotoPerfil;
+    private byte[] fotoPerfil= null;
     private String pais;
     private boolean estadoCuenta;
     private List<Video> videos;
 
-    public Usuario(int idUsuario, String nombreUsuario, String email, String contraseña, String bio, byte []fotoPerfil, String pais, boolean estadoCuenta, List<Video> videos) {
+    public Usuario(int idUsuario, String nombreUsuario, String email, String contraseña, String bio, String pais, boolean estadoCuenta) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.contraseña = contraseña;
         this.bio = bio;
-        this.fotoPerfil = fotoPerfil;
         this.pais = pais;
         this.estadoCuenta = estadoCuenta;
-        this.videos = videos;
     }
 
     public int getIdUsuario() {
