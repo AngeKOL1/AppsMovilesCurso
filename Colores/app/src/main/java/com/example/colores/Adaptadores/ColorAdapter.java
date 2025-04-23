@@ -1,5 +1,6 @@
 package com.example.colores.Adaptadores;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,35 +18,31 @@ import java.util.List;
 
 public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.BasicViewHolder> {
 
-    List<Colores> colores= new ArrayList<>();
+    List<Colores> colores;
 
-    public ColorAdapter(ArrayList<Colores> colores){
-        this.colores=colores;
+    public ColorAdapter(List<Colores> colores) {
+        this.colores = colores;
     }
 
     @NonNull
     @Override
-    public ColorAdapter.BasicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_main, parent, false);
-        return new BasicViewHolder(view );
+    public BasicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.itemcolor, parent, false);
+        return new BasicViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ColorAdapter.BasicViewHolder holder, int position) {
-        Colores color= colores.get(position);
+    public void onBindViewHolder(@NonNull BasicViewHolder holder, int position) {
+        Colores color = colores.get(position);
+        holder.nameView.setText(color.nombre);
 
-        TextView nView = holder.itemView.findViewById(R.id.nameColor);
-        TextView cView= holder.itemView.findViewById(R.id.colorCod);
-        View colorView= holder.itemView.findViewById(R.id.cColorBg);
-
-        nView.setText(color.nombre);
         try {
-            String hex = "#" + color.colorHex;
-            cView.setText(hex);
-            colorView.setBackgroundColor(android.graphics.Color.parseColor(hex));
-        }catch (Exception ex){
-            Log.d("Main App","Usando color por defecto");
+            String hex = color.colorHex;
+            holder.codeView.setText(hex);
+            holder.colorBg.setBackgroundColor(Color.parseColor(hex));
+        } catch (Exception ex) {
+            Log.d("Main App", "Color inválido: " + ex.getMessage());
         }
     }
 
@@ -53,11 +50,16 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.BasicViewHol
     public int getItemCount() {
         return colores.size();
     }
-    public class BasicViewHolder extends RecyclerView.ViewHolder{
 
-        public BasicViewHolder(@NonNull View itemView){
+    public static class BasicViewHolder extends RecyclerView.ViewHolder {
+        TextView nameView, codeView;
+        View colorBg;
+
+        public BasicViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            nameView = itemView.findViewById(R.id.nameColor);
+            codeView = itemView.findViewById(R.id.colorCod);
+            colorBg = itemView.findViewById(R.id.cColorBg);
         }
     }
 }

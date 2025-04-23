@@ -6,7 +6,7 @@ public class Colores {
    @SerializedName("name")
    public String nombre;
 
-   @SerializedName("hex")
+   @SerializedName("colorhex")
    public String colorHex;
 
 
