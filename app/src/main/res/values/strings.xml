@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ListaPokemonesFirebase</string>
+    <string name="title_activity_ubicacion_pokemon">UbicacionPokemon</string>
+</resources>

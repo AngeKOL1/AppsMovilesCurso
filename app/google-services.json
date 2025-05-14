@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "165534527405",
+    "firebase_url": "https://pokemonfirebase-222c9-default-rtdb.firebaseio.com",
+    "project_id": "pokemonfirebase-222c9",
+    "storage_bucket": "pokemonfirebase-222c9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165534527405:android:f37b53c430f979ec14fb24",
+        "android_client_info": {
+          "package_name": "com.example.listapokemonesfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1TihQt_TNTtjXZi_iKlrfbLm8KCbLcCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
